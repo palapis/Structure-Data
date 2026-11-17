@@ -1,15 +1,13 @@
-// Q1_Stack.cpp - Basic Array-Based Stack (LIFO), kapasitas 5
 #include <iostream>
 using namespace std;
 
-const int MAX = 5;      // kapasitas maksimum stack
-int stackArr[MAX];      // array penyimpan elemen
-int top = -1;           // -1 = stack kosong
+const int MAX = 5;      
+int stackArr[MAX];      
+int top = -1;           
 
 bool isEmpty() { return top == -1; }
 bool isFull()  { return top == MAX - 1; }
 
-// Masukkan elemen di puncak stack
 void push(int value) {
     if (isFull()) {
         cout << "Stack Overflow! " << value << " cannot be inserted.\n";
@@ -20,7 +18,6 @@ void push(int value) {
     cout << value << " inserted successfully.\n";
 }
 
-// Buang elemen di puncak stack
 void pop() {
     if (isEmpty()) {
         cout << "Stack Underflow! Stack is empty.\n";
@@ -30,7 +27,6 @@ void pop() {
     top--;
 }
 
-// Lihat elemen puncak tanpa membuangnya
 void peek() {
     if (isEmpty()) {
         cout << "Stack is empty.\n";
@@ -39,7 +35,6 @@ void peek() {
     cout << "Top element: " << stackArr[top] << "\n";
 }
 
-// Tampilkan isi stack dari puncak ke dasar
 void display() {
     if (isEmpty()) {
         cout << "Stack is empty.\n";
