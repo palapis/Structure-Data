@@ -1,12 +1,12 @@
-// Q4_CircularQueue.cpp - Circular Queue (modulo wrapping) + Mandatory Test
+
 #include <iostream>
 using namespace std;
 
 const int MAX = 5;
 int queueArr[MAX];
-int frontIdx  = 0;      // indeks elemen terdepan
-int rearIdx   = -1;     // indeks elemen terbelakang
-int itemCount = 0;      // jumlah elemen -> pembeda Full vs Empty
+int frontIdx  = 0;      
+int rearIdx   = -1;     
+int itemCount = 0;      
 
 bool isEmpty() { return itemCount == 0; }
 bool isFull()  { return itemCount == MAX; }
@@ -17,7 +17,6 @@ void resetQueue() {
     itemCount = 0;
 }
 
-// Masukkan di belakang; rear "melingkar" dengan % MAX
 void enqueue(int value) {
     if (isFull()) {
         cout << "Queue Overflow! " << value << " cannot be inserted.\n";
@@ -29,7 +28,6 @@ void enqueue(int value) {
     cout << value << " inserted successfully.\n";
 }
 
-// Keluarkan dari depan; front maju dengan % MAX (tanpa menggeser elemen)
 void dequeue() {
     if (isEmpty()) {
         cout << "Queue Underflow! Queue is empty.\n";
@@ -48,7 +46,6 @@ void front() {
     cout << "Front element: " << queueArr[frontIdx] << "\n";
 }
 
-// Tampilkan dari front sebanyak itemCount elemen (mengikuti wrap)
 void display() {
     if (isEmpty()) {
         cout << "Queue is empty.\n";
@@ -61,7 +58,6 @@ void display() {
     cout << "\n";
 }
 
-// 10 langkah wajib dari soal -> hasil: Queue: 30 40 50 60 70
 void mandatoryTest() {
     resetQueue();
     cout << "\n--- Mandatory Test ---\n";
